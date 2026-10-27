@@ -12,7 +12,7 @@ Requires Node.js 22 or later. There are no third-party dependencies or installat
 npm run dev
 ```
 
-Open http://127.0.0.1:4173/unifi-sla-guide.github.io/ to preview the same project subpath used by GitHub Pages. Opening `index.html` directly also works.
+Open http://127.0.0.1:4173/unifi-sla-guide/ to preview the same project subpath used by GitHub Pages. Opening `index.html` directly also works.
 
 ```sh
 npm test
@@ -23,13 +23,13 @@ Checks cover all 45 localized step views, dictionary parity, highlight targets, 
 
 ## GitHub Pages deployment
 
-Repository: [NEOLEE98/unifi-sla-guide.github.io](https://github.com/NEOLEE98/unifi-sla-guide.github.io).
+Repository: [NEOLEE98/unifi-sla-guide](https://github.com/NEOLEE98/unifi-sla-guide).
 
 1. In **Settings → Pages → Build and deployment**, select **GitHub Actions** as the source.
 2. Push to `main`, or run **Validate and deploy GitHub Pages** from the Actions tab.
 3. Wait for the deployment job to finish.
 
-Expected URL: **https://neolee98.github.io/unifi-sla-guide.github.io/**
+Expected URL: **https://neolee98.github.io/unifi-sla-guide/**
 
 This is a project site: the repository name differs from the owner's `NEOLEE98.github.io` user-site name. All site assets use relative paths so deployment under this subpath works without configuration.
 

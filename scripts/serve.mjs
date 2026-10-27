@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
-const prefix = '/unifi-sla-guide.github.io';
+const prefix = '/unifi-sla-guide';
 const allowed = new Set(['index.html', 'style.css', 'console.css', 'app.js', 'i18n.js']);
 const mime = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'application/javascript; charset=utf-8' };
 http.createServer(async (req, res) => {
