@@ -1,54 +1,40 @@
-# UniFi WAN SLA guide
+# UniFi WAN SLA Guide
 
-A static, interactive guide for adding, editing, assigning, and applying WAN SLA profiles in UniFi Network. The recreated console uses fictional names, documentation-only addresses, and example.com probe hosts. No original screenshots are included.
+An interactive, step-by-step guide to configuring WAN SLA profiles in UniFi Network.
 
-Languages: English, Traditional Chinese, and Simplified Chinese. The language switcher translates the guide and mock console and remembers the selection locally.
+**[Open the guide →](https://neolee98.github.io/unifi-sla-guide/)**
+
+## What it covers
+
+- Creating an SLA profile and configuring verification servers, probe timing, and thresholds.
+- Editing an existing profile.
+- Switching a WAN from Auto to a custom SLA.
+- Applying or cancelling pending changes and verifying the result.
+
+The guide recreates the console with fictional example data and highlights the controls for each step. It is a teaching tool and does not connect to or change your gateway.
+
+## Languages
+
+English, 繁體中文, and 简体中文. Use the language selector to translate the instructions and example console. Your preference is remembered in your browser.
 
 ## Run locally
 
-Requires Node.js 22 or later. There are no third-party dependencies or installation step.
+Open `index.html` directly, or use Node.js 22 or later:
 
 ```sh
 npm run dev
 ```
 
-Open http://127.0.0.1:4173/unifi-sla-guide/ to preview the same project subpath used by GitHub Pages. Opening `index.html` directly also works.
+Then visit [the local preview](http://127.0.0.1:4173/unifi-sla-guide/). No dependencies need to be installed.
+
+To run the validation checks:
 
 ```sh
 npm test
-npm run build
 ```
 
-Checks cover all 45 localized step views, dictionary parity, highlight targets, and the Auto → select new SLA → pending change → Apply Changes / Cancel → verify flow. Build output in `_site/` contains only the public HTML, CSS, JavaScript, and `.nojekyll` files.
+## About
 
-## GitHub Pages deployment
+This is an independent project, not affiliated with Ubiquiti. The existing-profile editor is illustrative, and labels or controls may vary by UniFi version. Chinese console labels are teaching translations.
 
-Repository: [NEOLEE98/unifi-sla-guide](https://github.com/NEOLEE98/unifi-sla-guide).
-
-1. In **Settings → Pages → Build and deployment**, select **GitHub Actions** as the source.
-2. Push to `main`, or run **Validate and deploy GitHub Pages** from the Actions tab.
-3. Wait for the deployment job to finish.
-
-Expected URL: **https://neolee98.github.io/unifi-sla-guide/**
-
-This is a project site: the repository name differs from the owner's `NEOLEE98.github.io` user-site name. All site assets use relative paths so deployment under this subpath works without configuration.
-
-The workflow validates pull requests without deploying them. Pushes to `main` and manual runs validate, stage, and deploy the guide with the standard GitHub Pages actions. No deployment secrets, external hosting service, or Sites manifest are required.
-
-Deployment follows [GitHub's custom Pages workflow documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
-
-Alternatively, this buildless site supports branch publishing: choose **Deploy from a branch → main → / (root)** instead of GitHub Actions. Use one publishing source at a time.
-
-## Files
-
-- `index.html`: guide structure and language selector.
-- `app.js`: recreated console, walkthrough, highlights, and pending/apply/cancel state.
-- `i18n.js`: all three translation dictionaries.
-- `style.css`, `console.css`: guide and console styles.
-- `check.mjs`: dependency-free validation.
-- `scripts/`: local preview and public-file staging.
-- `.github/workflows/pages.yml`: validation and deployment.
-
-The existing-profile editor is explicitly illustrative. Labels and save controls may vary by UniFi version; Chinese console labels are teaching translations. This project is independent of Ubiquiti.
-
-Reference: [Ubiquiti WAN SLA documentation](https://help.ui.com/hc/en-us/articles/360052548713-WAN-Failover-Load-Balancing-and-Port-Remapping-on-UniFi-Gateways).
+For product details, see [Ubiquiti's WAN SLA documentation](https://help.ui.com/hc/en-us/articles/360052548713-WAN-Failover-Load-Balancing-and-Port-Remapping-on-UniFi-Gateways).
