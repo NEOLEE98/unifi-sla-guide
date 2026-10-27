@@ -35,6 +35,8 @@ This is a project site: the repository name differs from the owner's `NEOLEE98.g
 
 The workflow validates pull requests without deploying them. Pushes to `main` and manual runs validate, stage, and deploy the guide with the standard GitHub Pages actions. No deployment secrets, external hosting service, or Sites manifest are required.
 
+Deployment follows [GitHub's custom Pages workflow documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+
 Alternatively, this buildless site supports branch publishing: choose **Deploy from a branch → main → / (root)** instead of GitHub Actions. Use one publishing source at a time.
 
 ## Files
