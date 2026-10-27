@@ -28,3 +28,7 @@ Object.assign(messages['zh-Hant'],{pingTitle:'建議的 Ping 目標',pingChina:'
 messages['zh-Hant'].steps[4][1]='將類型設為 Ping。中國大陸建議使用 223.5.5.5（阿里公共 DNS），其他地區使用 8.8.8.8（Google），再設定 Ping 間隔與評估期間。請確認目標能從受監控的 WAN 回應。';
 Object.assign(messages['zh-Hans'],{pingTitle:'推荐的 Ping 目标',pingChina:'中国大陆 · 阿里公共 DNS',pingElsewhere:'其他地区 · Google',pingNote:'选择地址即可在“服务器地址”字段中预览。将类型设为 Ping，并确认目标能从受监控的 WAN 响应。',privacy:'重建演示界面 · 示例网络数据与公共 Ping 目标 · 不包含个人网络信息。',safe:'示例网络数据 · 公共 Ping 目标',footer:'独立教学示意。网关和配置文件名称为虚构；Ping 地址为公共服务。不同 UniFi 版本的标签与保存按钮可能不同。中文界面文字为教学翻译。'});
 messages['zh-Hans'].steps[4][1]='将类型设为 Ping。中国大陆推荐使用 223.5.5.5（阿里公共 DNS），其他地区使用 8.8.8.8（Google），再设置 Ping 间隔与评估时段。请确认目标能从受监控的 WAN 响应。';
+
+Object.assign(messages.en,{jumpStep:"Jump to step"});
+Object.assign(messages["zh-Hant"],{jumpStep:"跳至步驟"});
+Object.assign(messages["zh-Hans"],{jumpStep:"跳至步骤"});

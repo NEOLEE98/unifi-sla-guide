@@ -1,7 +1,7 @@
 import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';
 const source=fs.readFileSync('app.js','utf8'),dictionary=fs.readFileSync('i18n.js','utf8'),html=fs.readFileSync('index.html','utf8');
 const context=vm.createContext({document:{querySelector(){return {focus(){}}}},navigator:{language:'en'},localStorage:{getItem(){return null}}});
-vm.runInContext(dictionary+'\n'+source.slice(0,source.indexOf("$('#next').onclick=next;")),context);
+vm.runInContext(dictionary+'\n'+source.slice(0,source.indexOf("// Bind guide controls.")),context);
 vm.runInContext('render=()=>{};',context);
 const locales=vm.runInContext('Object.keys(messages)',context);const keys=vm.runInContext('Object.keys(messages.en).sort()',context);
 for(const language of locales){assert.equal(JSON.stringify(vm.runInContext(`Object.keys(messages[${JSON.stringify(language)}]).sort()`,context)),JSON.stringify(keys));vm.runInContext(`locale=${JSON.stringify(language)}`,context);for(const task of ['add','edit','assign']){const count=vm.runInContext(`tasks.${task}.length`,context);for(let i=0;i<count;i++){const output=vm.runInContext(`task='${task}';goStep(${i});consoleHTML()`,context);assert.ok(!output.includes('undefined'));const target=vm.runInContext('tasks[task][index][2]',context);assert.ok(output.includes(`data-target="${target}"`),`${language}/${task}/${i} target exists`);}}}

@@ -6,3 +6,64 @@
 .scene>.c-callout>span{left:var(--badge-left);top:var(--badge-top);bottom:auto;width:27px;height:27px;font:700 12px/1 system-ui;border-width:2px;box-shadow:0 2px 6px #0003}
 .scene>.c-callout:before{content:attr(data-label);position:absolute;left:calc(var(--badge-left) + 36px);top:calc(var(--badge-top) + 3px);white-space:nowrap;font:600 12px/22px system-ui;color:#385e88}
 @media(max-width:950px){main{padding:28px 22px 0}#guide{grid-template-columns:185px 1fr}aside{padding:22px 10px}ol button{font-size:11px;gap:8px}article{padding:18px}.instruction{min-height:160px}.instruction h2{font-size:21px}.scene{height:430px}.task-tabs button{padding:14px 15px}.reference-grid{gap:20px}footer{flex-direction:column;align-items:flex-start;gap:10px}}@media(max-width:650px){header{height:60px;padding:0 16px}.brand{font-size:12px;gap:8px}.language>span{display:none}.language select{max-width:115px}main{padding:25px 14px 0}h1{font-size:28px}.lead{font-size:14px}.guide-note{font-size:11px}.task-tabs{gap:0}.task-tabs button{padding:11px 8px;gap:6px;flex:1;justify-content:center}.task-tabs b{font-size:11px}.task-tabs button>span{display:none}#guide{grid-template-columns:1fr}aside{padding:13px 10px;border:0;border-bottom:1px solid var(--line)}aside>.eyebrow,.aside-note{display:none}ol{display:flex;gap:5px;margin:0;overflow:auto}ol li{margin:0;flex-shrink:0}ol button{padding:5px 7px;font-size:10px;gap:6px}ol button>span{height:20px;width:20px;font-size:8px}article{padding:18px 10px}.instruction{gap:10px;min-height:178px}.instruction h2{font-size:20px}.instruction p{font-size:12px}.instruction>div:first-child{width:28px;height:28px;border-radius:5px;font-size:11px}.scene{height:360px}.visual-caption{font-size:8px;gap:8px;padding:10px}.visual-caption>button{font-size:9px}.reference-grid{grid-template-columns:1fr;gap:20px}.reference-grid p{font-size:12px}.primary,.secondary{font-size:10px;padding:9px 11px}#progress>span{width:11px}}
+
+/* Phone layouts keep the guide column within the viewport and controls tappable. */
+.mobile-step-picker,.mobile-progress{display:none}
+#guide{grid-template-columns:225px minmax(0,1fr)}
+#guide>aside,.instruction>div:last-child{min-width:0}
+@media(min-width:651px) and (max-width:950px){#guide{grid-template-columns:185px minmax(0,1fr)}}
+@media(max-width:650px){
+ html{-webkit-text-size-adjust:100%;scroll-padding-top:16px}
+ body{font-size:15px}
+ header{height:auto;min-height:64px;padding:10px 16px;gap:10px}
+ .brand{font-size:14px}.brand>span{font-size:28px}
+ .language select{font-size:16px;min-height:44px;padding:7px 9px;max-width:132px}
+ main{padding:22px 12px 0;min-width:0}
+ h1{font-size:28px;line-height:1.3;overflow-wrap:anywhere}
+ .lead{font-size:15px;line-height:1.65}
+ .guide-note{font-size:12px;line-height:1.7;margin-bottom:20px}
+ .eyebrow{font-size:9px;letter-spacing:1px}
+ .task-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;margin-bottom:16px}
+ .task-tabs button{min-height:48px;padding:10px 6px;min-width:0}
+ .task-tabs b{font-size:13px;line-height:1.4;text-align:center}
+ #guide{grid-template-columns:minmax(0,1fr);overflow:clip}
+ #guide>aside{padding:12px;min-width:0}
+ #step-list{display:none}
+ .mobile-step-picker{display:flex;align-items:center;gap:10px;min-width:0;font-size:12px;color:#61768f}
+ .mobile-step-picker>span{flex-shrink:0}
+ .mobile-step-picker>select{min-width:0;width:100%;min-height:46px;border:1px solid #d1ddea;background:white;color:#245d9e;border-radius:6px;font:inherit;font-size:16px;padding:8px}
+ article{padding:18px 12px 0;min-width:0}
+ .instruction{min-height:0;margin-bottom:20px;gap:10px;scroll-margin-top:16px}
+ .instruction h2{font-size:21px;line-height:1.4;margin:6px 0 10px;overflow-wrap:anywhere}
+ .instruction p{font-size:14px;line-height:1.8;overflow-wrap:anywhere}
+ .instruction .eyebrow{font-size:10px;letter-spacing:.8px}
+ .instruction>div:first-child{width:30px;height:30px;font-size:13px}
+ .visual-caption{padding:6px 9px;min-height:48px;align-items:center;gap:8px}
+ .visual-caption>span{font-size:9px;line-height:1.5;flex:1}
+ .visual-caption>button{min-height:44px;font-size:12px;padding:6px;max-width:52%;line-height:1.4}
+ .scene{height:400px;height:clamp(340px,52svh,470px);min-width:0}
+ .scene>.c-callout{min-width:44px;min-height:44px}
+ .scene[data-full=true]>.c-callout{min-width:0;min-height:0}
+ .under-visual{min-height:0;padding:13px 2px 18px}
+ .under-visual p{font-size:12px;line-height:1.7}
+ .step-bottom{position:sticky;bottom:0;z-index:15;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1.25fr);gap:10px;padding:12px 0 max(12px,env(safe-area-inset-bottom));background:#fff;border-top:1px solid #dce5f0;box-shadow:0 -6px 14px #fff}
+ #progress{display:none}.mobile-progress{display:block;font-size:12px;color:#708299;white-space:nowrap}
+ .step-bottom button{min-height:48px;padding:9px 10px;font-size:13px;line-height:1.4;white-space:normal}
+ .ping-advice{padding:13px;margin-bottom:18px}.ping-advice>b{font-size:14px}
+ .ping-options{display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
+ .ping-options>button{min-height:48px;justify-content:space-between;font-size:12px;padding:9px 10px;gap:6px}
+ .ping-options code{font-size:14px}.ping-advice>p{font-size:12px;line-height:1.65}
+ .ping-advice>small{font-size:11px;line-height:2}
+ .quick-reference{margin-top:26px;padding:0 3px}.quick-reference h2{font-size:22px}
+ .reference-grid h3{font-size:15px}.reference-grid p{font-size:14px;line-height:1.8}
+ footer{font-size:12px;gap:14px;padding-bottom:max(24px,env(safe-area-inset-bottom));overflow-wrap:anywhere}
+ footer a{white-space:normal;min-height:44px;display:flex;align-items:center}
+ .board .c-card label{font-size:11px}.board .c-card>b{font-size:12px}
+ .board .c-input,.board .c-number,.board .c-number>b{font-size:12px}
+ .board .c-number>em{font-size:10px}.board .c-radio{font-size:10px;gap:7px}
+ .board .c-target{font-size:11px}.board .c-target-name{gap:4px}
+ .board .c-sla-menu>button{height:46px;font-size:12px}
+ .board .c-save,.board .c-cancel{min-height:36px;font-size:12px}
+ .board .c-pending-bar .c-save,.board .c-pending-bar .c-cancel{min-height:60px;padding:12px;font-size:14px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
